@@ -252,6 +252,15 @@ class AndesBottomSheet : CoordinatorLayout {
         frameView.addView(view)
     }
 
+    fun setContentMargin(left: Int? = null, right: Int? = null, top: Int? = null, bottom: Int? = null ) {
+        (frameView.layoutParams as? MarginLayoutParams)?.apply {
+            leftMargin = left?: leftMargin
+            rightMargin = right?: rightMargin
+            topMargin = top?: topMargin
+            bottomMargin = bottom?: bottomMargin
+        }
+    }
+
     /**
      * Removes all views from FrameLayout inside of the bottomSheet
      */
